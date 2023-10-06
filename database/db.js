@@ -1,6 +1,9 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
-const MONGODB_URI = 'YOUR_MONGODB_CONNECTION_STRING';
+dotenv.config();
+
+const MONGODB_URI = process.env.MONGODB_URI;
 const client = new MongoClient(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
