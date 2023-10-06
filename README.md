@@ -9,6 +9,8 @@ Design Document: https://docs.google.com/document/d/1RtifuN9u5YRcRfKW30iL2ABufcF
 
 Screenshot:
 Mainpage:
+![image](https://github.com/Yushicui/QuizEveryone/assets/145535662/777d220c-945a-42f8-b30b-058bca90c697)
+
 
 Instructions to Build:
 Follow these instructions to set up and build the project locally:
