@@ -2,8 +2,81 @@
 <html>
 <head>
   <title>Create Quiz</title>
+  <style>
+    .answerOptions {
+      display: none;
+    }
+    .trueOrFalse {
+        display: block;
+    }
+    .fillBlank {
+        display: none;
+    }
+  </style>
 </head>
 <body>
+  <h1>Create a Quiz</h1>
+  
+  <form id="quizForm">
+    <div>
+      <label for="questionText">Question Text:</label>
+      <input type="text" id="questionText" required>
+    </div>
+
+    <div>
+      <label for="questionType">Question Type:</label>
+      <select id="questionType" onchange="toggleOptions()">
+        <option value="trueFalse">True/False</option>
+        <option value="multipleChoice">Multiple Choice</option>
+        <option value="blankFilling">Blank Filling</option>
+      </select>
+    </div>
+
+    <div id="answerOptions" class="answerOptions">
+      <label for="option1">Option 1:</label>
+      <input type="text" id="option1">
+      <label for="option2">Option 2:</label>
+      <input type="text" id="option2">
+      <label for="option3">Option 3:</label>
+      <input type="text" id="option3">
+      <label for="correctOption">Correct Option:</label>
+      <select id="correctOption">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </select>
+    </div>
+
+    <div id="answerText" class="answerOptions">
+      <label for="correctAnswer">Correct Answer:</label>
+      <input type="text" id="correctAnswer">
+    </div>
+
+    <div id="trueOrFalse" class="trueOrFalse">
+        <label for="correctAnswer">Correct Answer:</label>
+        <select id="trueFalseAnswer">
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+      </div>
+
+      <div id="fillBlank" class="fillBlank">
+        <label for="correctAnswer">Correct Answer:</label>
+        <input type="text" id="correctAnswer" required>
+      </div>
+
+    <button type="button" onclick="addQuestion()">Add Question</button>
+    <button type="submit" onclick="submitQuiz()">Submit Quiz</button>
+  </form>
+
+  <div id="questionsContainer">
+    <!-- Questions will be displayed here -->
+  </div>
+
   <script src="js/frontend.js"></script>
 </body>
 </html>
+
+
+
+
