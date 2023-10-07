@@ -29,7 +29,6 @@ router.post('/creatquiz', async (req, res) => {
     } catch (error) {
         console.error("Error inserting quiz:", error);
         res.status(500).json({ success: false, message: "Internal server error lala" });
-        console.log("yesyesyes");
     }
 });
 
