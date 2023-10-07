@@ -3,36 +3,10 @@ import myDB from '../database/db.js';
 
 const router = express.Router();
 
-<<<<<<< Updated upstream
-
 router.post('/create', async (req, res) => {
     try {
         const result = await myDB.insertQuiz(req.body);
         res.status(201).json({ success: true, quizId: result.insertedId });
-=======
-router.post('/create', async (req, res) => {
-    try {
-        const db = await connect();
-
-        const quiz1 = {
-            title: "Quiz1 Test",
-            description: "A quiz1 example",
-            questions: [
-                {
-                    type: "quiz",
-                    questionText: "What's the capital of France?",
-                    options: ["London", "Berlin", "Paris", "Rome"],
-                    correctAnswer: "Paris"
-                },
-            ],
-            responses: []
-        };
-
-        // Insert the quiz object into the 'quizzes' collection
-        const result = await db.collection('mcq').insertOne(quiz1);
-
-        res.json({ success: true, quizId: result.insertedId });
->>>>>>> Stashed changes
     } catch (error) {
         console.error('Error creating quiz:', error);
         res.status(500).json({ success: false, message: 'Internal Server Error' });
@@ -85,31 +59,5 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-// router.post('/createquiz', async (req, res) => {
-//     try {
-//         const db = await connect();
-
-//         const quiz = {
-//             title: "Sample Quiz",
-//             description: "A simple quiz example",
-//             questions: [
-//                 {
-//                     type: "mcq",
-//                     questionText: "What's the capital of France?",
-//                     options: ["London", "Berlin", "Paris", "Rome"],
-//                     correctAnswer: "Paris"
-//                 },
-//             ],
-//             responses: []
-//         };
-
-//         const result = await db.collection('quiz').insertOne(quiz);
-
-//         res.json({ success: true, quizId: result.insertedId });
-//     } catch (error) {
-//         console.error("Error inserting quiz:", error);
-//         res.status(500).json({ success: false, message: "Internal server error" });
-//     }
-// });
 
 export default router;
