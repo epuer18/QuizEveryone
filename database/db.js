@@ -1,5 +1,6 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
+
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ function myMongoDB(){
         useUnifiedTopology: true
     });
     
-    myDB.connect = async function connect() {
+    async function connect() {
         try {
             await client.db(DB_NAME).command({ serverStatus: 1 });
         } catch (error) {
@@ -35,8 +36,11 @@ function myMongoDB(){
 
     myDB.getQuizById = async (quizId) => {
         const db = await connect();
+        console.log("lalala");
+        console.log(quizId);
         const quizCol = db.collection(COllCECTION_QUIZ);
-        const quiz = await quizCol.findOne({ _id: quizId });
+        const quiz = await quizCol.findOne({ _id: new ObjectId(quizId) });
+        console.log(quiz);
         return quiz;
     }
 
@@ -64,7 +68,7 @@ function myMongoDB(){
             await client.close();
         }
     }
-
+    myDB.connect = connect;
     return myDB;
 }
 
