@@ -4,31 +4,31 @@ import { connect } from '../database/db.js';
 const router = express.Router();
 
 router.post('/creatquiz', async (req, res) => {
+    
     try {
         const db = await connect();
 
-        const quiz1 = {
-            title: "Quiz1 Test",
-            description: "A quiz1 example",
+        const quiz = {
+            title: "Sample Quiz",
+            description: "A simple quiz example",
             questions: [
                 {
-                    type: "quiz",
+                    type: "mcq",
                     questionText: "What's the capital of France?",
                     options: ["London", "Berlin", "Paris", "Rome"],
                     correctAnswer: "Paris"
                 },
-                // ... other questions
             ],
             responses: []
         };
 
         // Insert the quiz object into the 'quizzes' collection
-        const result = await db.collection('mcq').insertOne(quiz1);
+        const result = await db.collection('mcq').insertOne(quiz);
 
         res.json({ success: true, quizId: result.insertedId });
     } catch (error) {
         console.error("Error inserting quiz:", error);
-        res.status(500).json({ success: false, message: "Internal server error" });
+        res.status(500).json({ success: false, message: "Internal server error lala" });
     }
 });
 
