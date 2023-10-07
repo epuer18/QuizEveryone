@@ -7,14 +7,14 @@ router.post('/creatquiz', async (req, res) => {
     
     try {
         const db = await connect();
-        console.log("111111111111111111111");
+
         const quiz = {
-            title: "Zexi Quiz",
+            title: "Sample Quiz",
             description: "A simple quiz example",
             questions: [
                 {
                     type: "mcq",
-                    questionText:"haha",
+                    questionText: "What's the capital of France?",
                     options: ["London", "Berlin", "Paris", "Rome"],
                     correctAnswer: "Paris"
                 },
@@ -22,6 +22,7 @@ router.post('/creatquiz', async (req, res) => {
             responses: []
         };
 
+        // Insert the quiz object into the 'quizzes' collection
         const result = await db.collection('mcq').insertOne(quiz);
 
         res.json({ success: true, quizId: result.insertedId });
