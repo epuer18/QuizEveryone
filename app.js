@@ -1,6 +1,5 @@
 import express from 'express';
 import { connect } from './database/db.js';
-// import userRoutes from './routes/userRoutes.js';
 import quizRoutes from './routes/quizRoutes.js';
 
 
