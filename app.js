@@ -7,6 +7,7 @@ import quizRoutes from './routes/quizRoutes.js';
 const app = express();
 const PORT = 3000;
 
+app.use(express.static('frontend'));
 app.use(express.json()); 
 app.use('/api/quizzes', quizRoutes);
 

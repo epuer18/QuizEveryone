@@ -3,7 +3,7 @@ import { connect } from '../database/db.js';
 
 const router = express.Router();
 
-router.post('/create', async (req, res) => {
+router.post('/creatquiz', async (req, res) => {
     try {
         const db = await connect();
 
@@ -23,7 +23,7 @@ router.post('/create', async (req, res) => {
         };
 
         // Insert the quiz object into the 'quizzes' collection
-        const result = await db.collection('quiz').insertOne(quiz);
+        const result = await db.collection('mcq').insertOne(quiz);
 
         res.json({ success: true, quizId: result.insertedId });
     } catch (error) {
