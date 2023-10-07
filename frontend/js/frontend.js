@@ -126,3 +126,5 @@ function clearInputFields() {
   const correctOption = document.getElementById('correctOption');
   correctOption.selectedIndex = 0;
 }
+
+

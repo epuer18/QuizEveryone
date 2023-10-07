@@ -45,7 +45,7 @@ router.put('/id', async (req, res) => {
 });
 
 // Delete a quiz
-router.delete('/:id', async (req, res) => {
+router.delete('/id', async (req, res) => {
     try {
         const deletedCount = await myDB.deleteQuiz(req.params.id);
         if (deletedCount > 0) {
