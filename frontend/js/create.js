@@ -102,7 +102,7 @@ function displayQuestion(question) {
     <div class = "questionBody">
       Question ${question.number} (${questionTypeLabel}): ${question.questionText}
     </div>
-    ${question.options ? `<div>Options: ${question.options.join(', ')}</div>` : ''}
+    ${question.options ? `<div class="options">Options: ${question.options.join(', ')}</div>` : ''}
     <div class = "answerBody">
       Correct Answer: ${question.correctAnswer}
     </div>
