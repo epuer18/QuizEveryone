@@ -52,7 +52,7 @@ function displayQuiz(data) {
     <label for="studentAnswer">Your Answer:</label>
     <input type="text" id="fillBlankAnswer${index}" >
   </div>` : ''}
-        <hr>
+        <hr class = "questionLine">
       `;
       quizContainer.appendChild(questionDiv);
     });

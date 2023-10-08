@@ -20,14 +20,7 @@ router.get('/feedback/responseId', async (req, res) => {
         const responseId = req.query.responseId;
         const feedbackData = await myDB.getResponseById(responseId);
 
-        console.log("111" + req.query.responseId);
-
-        console.log("reid" + responseId);
-
-        console.log(feedbackData)
-
         const studentAnswers = feedbackData.quizResponses;
-        // const correctAnswers = feedbackData.quizResponses.answer;
 
         let correctCount = 0;
         const detailedFeedback = [];
@@ -35,9 +28,6 @@ router.get('/feedback/responseId', async (req, res) => {
         console.log(studentAnswers);
 
         studentAnswers.forEach((studentAnswer) => {
-            console.log(111111111111111111);
-            console.log(studentAnswer);
-            console.log(22222222222222222222);
             const isCorrect = studentAnswer.response === studentAnswer.answer;
             if (isCorrect) correctCount++;
 

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(252, 208, 214);
+  }
+  
+  h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(187, 0, 255);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .studentInfo{
+    border: 5px solid rgb(249, 7, 164);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+
+  button {
+    padding: 30px 60px; /* Increased padding for larger buttons */
+    font-size: 36px; /* Increased font size */
+    border: 8px solid rgb(243, 251, 98); /* Pink border */
+    background-color: rgb(249, 7, 164); /* White background */
+    color: rgb(3, 251, 255); /* Black text color */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  button:hover {
+    background-color: rgb(246, 168, 180); /* Pink background on hover */
+    color: rgb(3, 251, 255); /* White text color on hover */
+  }
+
+  
+  .quizContainer {
+    border: 5px solid rgb(3, 251, 255);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .feedbackContainer {
+    border: 5px solid rgb(184, 0, 251);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  .question-fieldset {
+    margin-bottom: 15px;
+  }
+  
+  .question-fieldset label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .question-fieldset label input {
+    margin-right: 10px;
+  }
+
+
+  .trueOrFalse {
+    font-size: 24px;
+}
+.trueOrFalse select {
+    font-size: 24px;
+}
+.fillBlank {
+    font-size: 24px;
+    }
+.fillBlank input{
+font-size: 24px;
+}
+
+.questionLine {
+    margin-top: 15px;
+    border: 2px solid rgb(243, 251, 98);
+    height: 3px;
+    background:rgb(243, 251, 98);
+  }
+
+  
