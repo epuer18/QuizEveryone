@@ -134,8 +134,17 @@ function displayQuiz(data) {
     }
   }
 
+  function copyLinkToClipboard() {
+    const textArea = document.createElement("textarea");
+    textArea.value = window.location.href;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert("Quiz link copied to clipboard!");
+}
+
   async function fetchFeedback(responseId) {
-    console.log("hahahhwuwuwuwuwuahahahhahaha");
     try {
         const response = await fetch(`/api/responses/feedback/responseId?responseId=${responseId}`);
         const data = await response.json();

@@ -1,7 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
 
-
 dotenv.config();
 
 function myMongoDB(){
@@ -45,22 +44,22 @@ function myMongoDB(){
     }
 
 
-    myDB.updateQuiz = async (quizId, updatedData) => {
-        const db = await connect();
-        const quizCol = db.collection(COllCECTION_QUIZ);
-        const result = await quizCol.updateOne({ _id: quizId }, { $set: updatedData });
-        console.log('Updated quiz:', result);
-        return result;
-    }
+    // myDB.updateQuiz = async (quizId, updatedData) => {
+    //     const db = await connect();
+    //     const quizCol = db.collection(COllCECTION_QUIZ);
+    //     const result = await quizCol.updateOne({ _id: quizId }, { $set: updatedData });
+    //     console.log('Updated quiz:', result);
+    //     return result;
+    // }
 
 
-    myDB.deleteQuiz = async (quizId) => {
-        const db = await connect();
-        const quizCol = db.collection(COllCECTION_QUIZ);
-        const result = await quizCol.deleteOne({ _id: quizId });
-        console.log('Deleted quiz:', result);
-        return result;
-    }
+    // myDB.deleteQuiz = async (quizId) => {
+    //     const db = await connect();
+    //     const quizCol = db.collection(COllCECTION_QUIZ);
+    //     const result = await quizCol.deleteOne({ _id: quizId });
+    //     console.log('Deleted quiz:', result);
+    //     return result;
+    // }
 
 
     myDB.insertResponse = async (responseData) => {
@@ -90,20 +89,3 @@ function myMongoDB(){
 }
 
 export default myMongoDB();
-
-
-
-// const MONGODB_URI = process.env.MONGODB_URI;
-
-// const client = new MongoClient(MONGODB_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
-
-// async function connect() {
-//     await client.connect();
-//     console.log('Connected to MongoDB');
-//     return client.db('quizeveryone');
-// }
-
-// export { connect };

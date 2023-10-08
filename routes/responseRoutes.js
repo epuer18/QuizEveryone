@@ -25,8 +25,6 @@ router.get('/feedback/responseId', async (req, res) => {
         let correctCount = 0;
         const detailedFeedback = [];
 
-        console.log(studentAnswers);
-
         studentAnswers.forEach((studentAnswer) => {
             const isCorrect = studentAnswer.response === studentAnswer.answer;
             if (isCorrect) correctCount++;
@@ -41,7 +39,6 @@ router.get('/feedback/responseId', async (req, res) => {
 
         const percentageCorrect = (correctCount / studentAnswers.length) * 100;
 
-        // Return feedback to frontend
         res.json({
             success: true,
             percentageCorrect: percentageCorrect,
@@ -50,7 +47,7 @@ router.get('/feedback/responseId', async (req, res) => {
 
     } catch (error) {
         console.error('Error fetching feedback:', error);
-        res.status(500).json({ success: false, message: 'Internal Server Error66666' });
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 });
 
