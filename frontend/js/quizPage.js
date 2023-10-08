@@ -164,6 +164,8 @@ function displayQuiz(data) {
                     </div>
                 `;
             });
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.style.display = 'none';
 
             // Display the percentage
             feedbackDiv.innerHTML = `

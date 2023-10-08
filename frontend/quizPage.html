@@ -9,6 +9,9 @@
 </head>
 <body>
     <h1>Quiz Page</h1>
+    <div>
+        <button onclick="copyLinkToClipboard()">Copy Quiz Link</button>
+    </div>
     <div class="studentInfo">
     <label for="studentId">Student ID:</label>
     <input type="text" id="studentId" placeholder="Enter Student ID">
@@ -17,12 +20,11 @@
     <input type="text" id="studentName" placeholder="Enter Student Name">
     </div>
     <div id="quizContainer" class="quizContainer"></div>
-    <button onclick="submitQuiz()">Submit Quiz</button>
+    <button type="submit" onclick="submitQuiz()">Submit Quiz</button>
     <div id="feedbackContainer" class="feedbackContainer">
+        <div class = "feedbackHead">Quiz Result</div>
     </div>
-    <div>
-        <button onclick="copyLinkToClipboard()">Copy Quiz Link</button>
-    </div>
+
     <script src="js/quizPage.js"></script>
 </body>
 </html>

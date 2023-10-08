@@ -5,7 +5,7 @@ body {
   }
   
   h1 {
-    font-size: 64px;
+    font-size: 72px;
     margin-bottom: 20px;
     text-align: center;
     color:rgb(187, 0, 255);
@@ -35,7 +35,8 @@ body {
   
 
   button {
-    padding: 30px 60px; /* Increased padding for larger buttons */
+    width: 350px;
+    height:120px;
     font-size: 36px; /* Increased font size */
     border: 8px solid rgb(243, 251, 98); /* Pink border */
     background-color: rgb(249, 7, 164); /* White background */
@@ -91,6 +92,14 @@ body {
     }
 .fillBlank input{
 font-size: 24px;
+}
+
+.feedbackHead{
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-align: center;
+    color:rgb(1, 225, 135);
+    font-weight: bold;
 }
 
 .questionLine {
