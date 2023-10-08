@@ -106,6 +106,23 @@ body {
     justify-content: center;
     margin-top: 20px;
   }
+
+  .homeicon{
+    width:80px;
+    height:80px;
+  }
+
+  .home {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left;
+    
+  }
+
+  .home a{
+    color:rgb(249, 7, 164);
+    font-weight: bold;
+  }
   
   /* Add more styles as needed */
   

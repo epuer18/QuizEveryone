@@ -109,4 +109,20 @@ font-size: 24px;
     background:rgb(243, 251, 98);
   }
 
+  .homeicon{
+    width:80px;
+    height:80px;
+  }
+
+  .home {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left;
+    
+  }
+
+  .home a{
+    color:rgb(249, 7, 164);
+    font-weight: bold;
+  }
   
