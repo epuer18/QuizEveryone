@@ -109,10 +109,7 @@ function displayQuiz(data) {
       studentName,
       quizResponses
     };
-  
-    console.log('Quiz Data:', quizData);
-    // Send the quiz data to the backend (you need to implement this part)
-
+    // console.log('Quiz Data:', quizData);
     try {
       const response = await fetch('/api/responses/response', {
           method: 'POST',
@@ -123,8 +120,11 @@ function displayQuiz(data) {
       });
 
       const data = await response.json();
+      console.log(data);
       if (data.success) {
           alert('Quiz submitted successfully!');
+          console.log(data.responseId);
+          fetchFeedback(data.responseId);
       } else {
           alert('Error submitting the quiz. Please try again.');
       }
@@ -132,8 +132,43 @@ function displayQuiz(data) {
       console.error('Error submitting quiz:', error);
       alert('An error occurred while submitting the quiz.');
     }
-
   }
 
+  async function fetchFeedback(responseId) {
+    console.log("hahahhwuwuwuwuwuahahahhahaha");
+    try {
+        const response = await fetch(`/api/responses/feedback/responseId?responseId=${responseId}`);
+        const data = await response.json();
+        
+        if (data.success) {
+            const feedbackContainer = document.getElementById('feedbackContainer');
+            
+            // Display each question, student's answer, and the correct answer
+            let detailedFeedbackHtml = '';
+            data.feedback.forEach(item => {
+                detailedFeedbackHtml += `
+                    <div class="question-feedback">
+                        <p><strong>Question:</strong> ${item.question}</p>
+                        <p class="${item.isCorrect ? '' : 'wrong-answer'}"><strong>Your Answer:</strong> ${item.studentAnswer}</p>
+                        ${item.isCorrect ? '' : `<p class="correct-answer"><strong>Correct Answer:</strong> ${item.correctAnswer}</p>`}
+                    </div>
+                `;
+            });
 
-  getQuiz();
+            // Display the percentage
+            feedbackContainer.innerHTML = `
+                ${detailedFeedbackHtml}
+                <h2>Overall Feedback</h2>
+                <p>Percentage Correct: ${data.percentageCorrect}%</p>
+            `;
+        } else {
+            alert('Error fetching feedback.');
+        }
+
+    } catch (error) {
+        console.error('Error fetching feedback:', error);
+        alert('An error occurred while fetching feedback.');
+    }
+}
+
+getQuiz();
