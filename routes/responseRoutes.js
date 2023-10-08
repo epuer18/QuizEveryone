@@ -15,28 +15,50 @@ router.post('/response', async (req, res) => {
 });
 
 
-router.get('/results/responseId', async (req, res) => {
+router.get('/feedback/responseId', async (req, res) => {
     try {
-        const responseId = req.params.responseId;
-        const response = await myDB.getResponseById(responseId);
-        const quiz = await myDB.getQuizById(response.quizId);
-        
-        const studentAnswers = response.answers;
-        const correctAnswers = quiz.questions.map(q => q.correctAnswer);
-        let correctCount = 0;
+        const responseId = req.query.responseId;
+        const feedbackData = await myDB.getResponseById(responseId);
 
-        for (let i = 0; i < studentAnswers.length; i++) {
-            if (studentAnswers[i] === correctAnswers[i]) {
-                correctCount++;
-            }
-        }
+        console.log("111" + req.query.responseId);
+
+        console.log("reid" + responseId);
+
+        console.log(feedbackData)
+
+        const studentAnswers = feedbackData.quizResponses;
+        // const correctAnswers = feedbackData.quizResponses.answer;
+
+        let correctCount = 0;
+        const detailedFeedback = [];
+
+        console.log(studentAnswers);
+
+        studentAnswers.forEach((question,response, answer) => {
+            console.log(response);
+            const isCorrect = response === answer;
+            if (isCorrect) correctCount++;
+
+            detailedFeedback.push({
+                question: question,
+                studentAnswer: response,
+                correctAnswer: answer,
+                isCorrect: isCorrect
+            });
+        });
+
         const percentageCorrect = (correctCount / studentAnswers.length) * 100;
 
-        res.render('resultsPage', { percentage: percentageCorrect });
+        // Return feedback to frontend
+        res.json({
+            success: true,
+            percentageCorrect: percentageCorrect,
+            feedback: detailedFeedback
+        });
 
     } catch (error) {
-        console.error('Error fetching results:', error);
-        res.status(500).json({ success: false, message: 'Internal Server Error' });
+        console.error('Error fetching feedback:', error);
+        res.status(500).json({ success: false, message: 'Internal Server Error66666' });
     }
 });
 

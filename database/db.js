@@ -74,9 +74,9 @@ function myMongoDB(){
     myDB.getResponseById = async (responseId) => {
         const db = await connect();
         const responseCol = db.collection(COllCECTION_RESPONSE);
+        console.log(responseId);
         return await responseCol.findOne({ _id: new ObjectId(responseId) });
     }
-
 
     myDB.closeConnection = async () => {
         if (client.isConnected()) {
