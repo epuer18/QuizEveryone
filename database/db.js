@@ -63,11 +63,28 @@ function myMongoDB(){
     }
 
 
+    myDB.insertResponse = async (responseData) => {
+        const db = await connect();
+        const responseCol = db.collection(COllCECTION_RESPONSE);
+        const result = await responseCol.insertOne(responseData);
+        console.log('Response Submitted:', result);
+        return result;
+    }
+
+    myDB.getResponseById = async (responseId) => {
+        const db = await connect();
+        const responseCol = db.collection(COllCECTION_RESPONSE);
+        return await responseCol.findOne({ _id: new ObjectId(responseId) });
+    }
+
+
     myDB.closeConnection = async () => {
         if (client.isConnected()) {
             await client.close();
         }
     }
+
+
     myDB.connect = connect;
     return myDB;
 }
