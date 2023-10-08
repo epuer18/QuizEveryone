@@ -2,17 +2,7 @@
 <html>
 <head>
   <title>Create Quiz</title>
-  <style>
-    .answerOptions {
-      display: none;
-    }
-    .trueOrFalse {
-        display: block;
-    }
-    .fillBlank {
-        display: none;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/create.css">
 </head>
 <body>
   <h1>Create a Quiz</h1>
@@ -64,9 +54,10 @@
         <label for="correctAnswer">Correct Answer:</label>
         <input type="text" id="fillBlankAnswer" required>
       </div>
-
+      <div id="buttonContainer">
     <button type="button" onclick="addQuestion()">Add Question</button>
     <button type="submit" onclick="submitQuiz()">Submit Quiz</button>
+</div>
   </form>
 
   <div id="questionsContainer">

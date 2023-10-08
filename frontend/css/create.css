@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(252, 208, 214);
+  }
+
+  
+  h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(22, 214, 217);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .answerOptions {
+    display: none;
+  }
+  
+  .trueOrFalse {
+    display: block;
+}
+.fillBlank {
+    display: none;
+}
+  
+#questionsContainer {
+    border: 5px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .questionDiv {
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .questionDiv:last-child {
+    border: none;
+  }
+  
+  .questionNumber {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .questionText {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  
+  .questionDiv div {
+    margin-bottom: 5px;
+  }
+  
+  .questionDiv hr {
+    margin-top: 10px;
+  }
+
+  button {
+    padding: 30px 60px; /* Increased padding for larger buttons */
+    font-size: 36px; /* Increased font size */
+    margin-right: 20px;
+    border: 8px solid rgb(243, 251, 98); /* Pink border */
+    background-color: rgb(249, 7, 164); /* White background */
+    color: rgb(3, 251, 255); /* Black text color */
+  }
+  
+  button:hover {
+    background-color: rgb(246, 168, 180); /* Pink background on hover */
+    color: rgb(3, 251, 255); /* White text color on hover */
+  }
+  
+  /* Additional styles for centering the buttons */
+  #buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
