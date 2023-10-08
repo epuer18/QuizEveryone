@@ -93,7 +93,7 @@ function displayQuiz(data) {
         quizResponses.push({
             question: question.questionText,
             answer: question.correctAnswer,
-            response: fillBlankAnswer.value
+            response: fillBlankAnswer.value.toLowerCase()
           });
       }
       else {
@@ -171,7 +171,7 @@ function displayQuiz(data) {
             feedbackDiv.innerHTML = `
                 ${detailedFeedbackHtml}
                 <h2>Overall Feedback</h2>
-                <p>Percentage Correct: ${data.percentageCorrect}%</p>
+                <p><strong>Percentage Correct: ${data.percentageCorrect}</strong>%</p>
             `;
             if (feedbackContainer.firstChild) {
               feedbackContainer.replaceChild(feedbackDiv, feedbackContainer.firstChild);
