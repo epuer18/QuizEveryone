@@ -41,16 +41,16 @@ function displayQuiz(data) {
           </label>
         `).join('')}
       </fieldset>` : ''}
-      ${ question.questionType === 'trueFalse' ? `    <div id="studentAnswer" class="trueOrFalse">
+      ${ question.questionType === 'trueFalse' ? `  <div id="studentAnswer" class="trueOrFalse">
       <label for="studentAnswer">Your Answer:</label>
-      <select id="trueFalseAnswer">
+      <select id="trueFalseAnswer${index}">
           <option value="true">True</option>
           <option value="false">False</option>
         </select>
     </div>` : ''}
     ${ question.questionType === 'blankFilling' ? `<div id="studentAnswer" class="fillBlank">
     <label for="studentAnswer">Your Answer:</label>
-    <input type="text" id="fillBlankAnswer" >
+    <input type="text" id="fillBlankAnswer${index}" >
   </div>` : ''}
         <hr>
       `;
@@ -71,8 +71,8 @@ function displayQuiz(data) {
     
     questions.forEach((question, index) => {
       let selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-      let trueFalseAnswer = document.getElementById('trueFalseAnswer');
-      let fillBlankAnswer = document.getElementById('fillBlankAnswer');
+      let trueFalseAnswer = document.getElementById(`trueFalseAnswer${index}`);
+      let fillBlankAnswer = document.getElementById(`fillBlankAnswer${index}`);
       console.log(selectedOption);
       console.log(question);
       if (selectedOption) {
