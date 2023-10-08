@@ -100,7 +100,7 @@ function displayQuestion(question) {
 
   questionDiv.innerHTML = `
     <div>
-      Question ${question.id} (${questionTypeLabel}): ${question.questionText}
+      Question ${question.number} (${questionTypeLabel}): ${question.questionText}
     </div>
     ${question.options ? `<div>Options: ${question.options.join(', ')}</div>` : ''}
     <div>
