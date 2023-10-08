@@ -99,14 +99,14 @@ function displayQuestion(question) {
   }
 
   questionDiv.innerHTML = `
-    <div>
+    <div class = "questionBody">
       Question ${question.number} (${questionTypeLabel}): ${question.questionText}
     </div>
     ${question.options ? `<div>Options: ${question.options.join(', ')}</div>` : ''}
-    <div>
+    <div class = "answerBody">
       Correct Answer: ${question.correctAnswer}
     </div>
-    <hr>
+    <hr class = "questionLine">
   `;
   questionsContainer.appendChild(questionDiv);
 }

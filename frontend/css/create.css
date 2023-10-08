@@ -9,7 +9,7 @@ body {
     font-size: 64px;
     margin-bottom: 20px;
     text-align: center;
-    color:rgb(22, 214, 217);
+    color:rgb(187, 0, 255);
   }
   
   label {
@@ -22,14 +22,12 @@ body {
     padding: 8px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    font-size: 24px;
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-right: 10px;
+
+  .quizForm {
+    font-size: 32px;
   }
-  
   .answerOptions {
     display: none;
   }
@@ -42,39 +40,45 @@ body {
 }
   
 #questionsContainer {
-    border: 5px solid #ccc;
+    border: 5px solid rgb(3, 251, 255);
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
   }
   
-  .questionDiv {
-    border-bottom: 3px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-  }
   
-  .questionDiv:last-child {
-    border: none;
-  }
-  
-  .questionNumber {
+  .questionHead {
     font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: rgb(187, 0, 255);
+  }
+  
+  .questionBody {
+    font-weight: bold;
+    font-size: 24px;
     margin-bottom: 5px;
   }
   
-  .questionText {
+  .answerBody {
     font-size: 24px;
     margin-bottom: 10px;
   }
 
+
   
-  .questionDiv div {
-    margin-bottom: 5px;
-  }
-  
-  .questionDiv hr {
+  /* .questionLine {
     margin-top: 10px;
+    color-scheme: pink;
+    size: 10pt;
+  } */
+
+  .questionLine {
+    margin-top: 15px;
+    border: 0;
+    height: 3px;
+    background:rgb(243, 251, 98);
   }
 
   button {
