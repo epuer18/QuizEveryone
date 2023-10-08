@@ -162,7 +162,13 @@ function displayQuiz(data) {
                 <h2>Overall Feedback</h2>
                 <p>Percentage Correct: ${data.percentageCorrect}%</p>
             `;
-            feedbackContainer.appendChild(feedbackDiv);
+            if (feedbackContainer.firstChild) {
+              feedbackContainer.replaceChild(feedbackDiv, feedbackContainer.firstChild);
+            } else {
+              // If no old child, simply append the new one
+              feedbackContainer.appendChild(feedbackDiv);
+            }
+            // feedbackContainer.appendChild(feedbackDiv);
         } else {
             alert('Error fetching feedback.');
         }
