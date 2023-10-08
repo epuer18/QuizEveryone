@@ -56,3 +56,21 @@
     padding: 10px 0;
     text-align: center;
   }
+
+.home-icon {
+    font-size: 24px;   /* Adjust this value to your desired size */
+    text-decoration: none;
+    color: #333;  /* Or any color you prefer */
+    display: flex;
+    align-items: center;
+}
+
+/* .home-icon img {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+} */
+
+.home-icon:hover {
+  color: #555;  /* Or any hover color you prefer */
+}
