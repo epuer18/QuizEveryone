@@ -93,7 +93,7 @@ function displayQuiz(data) {
         quizResponses.push({
             question: question.questionText,
             answer: question.correctAnswer,
-            response: fillBlankAnswer.value
+            response: fillBlankAnswer.value.toLowerCase()
           });
       }
       else {
