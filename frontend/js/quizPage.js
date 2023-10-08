@@ -51,7 +51,7 @@ function displayQuiz(data) {
     </div>` : ''}
     ${ question.questionType === 'blankFilling' ? `<div id="studentAnswer" class="fillBlank">
     <label for="studentAnswer">Your Answer:</label>
-    <input type="text" id="fillBlankAnswer" required>
+    <input type="text" id="fillBlankAnswer" >
   </div>` : ''}
         <hr>
       `;
@@ -69,9 +69,11 @@ function displayQuiz(data) {
     }
   
     const quizResponses = [];
+    
     questions.forEach((question, index) => {
-      const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-      const studentanswer = document.getElementById('studentAnswer');
+      let selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+      let trueFalseAnswer = document.getElementById('trueFalseAnswer');
+      let fillBlankAnswer = document.getElementById('fillBlankAnswer');
       console.log(selectedOption);
       console.log(question);
       if (selectedOption) {
@@ -80,11 +82,21 @@ function displayQuiz(data) {
           answer: question.correctAnswer,
           response: selectedOption.id
         });
-      } else if (studentanswer){
+      } else if (trueFalseAnswer){
+        console.log(222222222222222)
         quizResponses.push({
             question: question.questionText,
             answer: question.correctAnswer,
-            response: studentanswer.value
+            response: trueFalseAnswer.value
+          });
+      }
+      else if (fillBlankAnswer){
+        console.log(11111111111111111111111)
+        console.log(fillBlankAnswer.value);
+        quizResponses.push({
+            question: question.questionText,
+            answer: question.correctAnswer,
+            response: fillBlankAnswer.value
           });
       }
       else {

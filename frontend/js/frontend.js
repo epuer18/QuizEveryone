@@ -115,6 +115,7 @@ function clearInputFields() {
   document.getElementById('questionText').value = '';
   document.getElementById('option1').value = '';
   document.getElementById('option2').value = '';
+  document.getElementById('option3').value = '';
   document.getElementById('correctAnswer').value = '';
 
   // Reset radio button selection for true/false
