@@ -34,7 +34,7 @@ function addQuestion() {
     let question;
     
     if (questionType === 'trueFalse') {
-      const correctAnswer = document.querySelector('input[name="trueFalseOption"]:checked');
+      const correctAnswer = document.getElementById('trueFalseAnswer').value;
       if (!correctAnswer) {
         alert('Please select a correct answer.');
         return;
@@ -42,29 +42,30 @@ function addQuestion() {
       question = {
         questionText,
         questionType,
-        correctAnswer: correctAnswer.value,
-        id: questionCounter
+        correctAnswer: correctAnswer,
+        number: questionCounter
       };
     } else if (questionType === 'multipleChoice') {
       const option1 = document.getElementById('option1').value;
       const option2 = document.getElementById('option2').value;
+      const option3 = document.getElementById('option3').value;
       const correctOption = document.getElementById('correctOption').value;
 
       question = {
         questionText,
         questionType,
-        options: [option1, option2],
+        options: [option1, option2, option3],
         correctAnswer: correctOption,
-        id: questionCounter
+        number: questionCounter
       };
     } else { // blankFilling
-      const correctAnswer = document.getElementById('correctAnswer').value;
+      const correctAnswer = document.getElementById('fillBlankAnswer').value;
       
       question = {
         questionText,
         questionType,
         correctAnswer,
-        id: questionCounter
+        number: questionCounter
       };
     }
 
@@ -128,3 +129,50 @@ function clearInputFields() {
 }
 
 
+
+
+async function submitQuiz() {
+    if (questions.length === 0) {
+      alert('Please add at least one question to submit the quiz.');
+      return;
+    }
+  
+    // Here, you can make a POST request to your server
+    // with the 'questions' array to save the quiz in the database
+    const url = '/api/quizzes/create'; // Update this URL if your endpoint is different
+
+    const currQuiz = { 
+        quiz: questions,
+        title: "sample quiz",
+        description: "A simple quiz"
+    }
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(currQuiz),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      console.log('Quiz created with ID:', data.quizId);
+
+      window.location.href = `http://localhost:3000/quizPage.html?quizId=${data.quizId}`;
+    } catch (error) {
+      console.error('Error creating quiz:', error);
+    }
+    console.log('Submitting quiz to the server:', questions);
+  
+    // Clear the questions and reset the counter after submitting the quiz
+    questions = [];
+    questionCounter = 1;
+  
+    // Clear the displayed questions on the page
+    const questionsContainer = document.getElementById('questionsContainer');
+    questionsContainer.innerHTML = '';
+  }

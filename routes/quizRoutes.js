@@ -4,8 +4,9 @@ import myDB from '../database/db.js';
 const router = express.Router();
 
 router.post('/create', async (req, res) => {
+    console.log(req.body);
     try {
-        const result = await myDB.insertQuiz(req.body);
+        const result = await myDB.createQuiz(req.body);
         res.status(201).json({ success: true, quizId: result.insertedId });
     } catch (error) {
         console.error('Error creating quiz:', error);
@@ -15,8 +16,9 @@ router.post('/create', async (req, res) => {
 
 // Retrieve a specific quiz by its ID
 router.get('/id', async (req, res) => {
+    console.log(req.query.id);
     try {
-        const quiz = await myDB.getQuizById(req.params.id);
+        const quiz = await myDB.getQuizById(req.query.id);
         if (quiz) {
             res.json(quiz);
         } else {
