@@ -3,21 +3,13 @@ import myDB from '../database/db.js';
 
 const router = express.Router();
 
-router.post('/submit/quizId', async (req, res) => {
+router.post('/response', async (req, res) => {
+    const responseData = req.body;
     try {
-        const response = {
-            quizId: req.params.quizId,
-            answers: req.body.answers,
-            name: req.body.name,
-            email: req.body.email,
-            timestamp: new Date()
-        };
-
-        const result = await myDB.insertResponse(response);
-
+        const result = await myDB.insertResponse(responseData);
         res.status(201).json({ success: true, responseId: result.insertedId });
     } catch (error) {
-        console.error('Error recording quiz response:', error);
+        console.error('Error saving response:', error);
         res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 });

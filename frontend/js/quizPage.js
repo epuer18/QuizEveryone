@@ -1,7 +1,6 @@
 let questions = [];
 
 async function getQuiz(){
-    console.log("youmeiyou")
     const urlParams = new URLSearchParams(window.location.search);
     const quizId = urlParams.get('quizId');
     fetch(`/api/quizzes/id?id=${quizId}`)
@@ -59,7 +58,7 @@ function displayQuiz(data) {
     });
   }
 
-  function submitQuiz() {
+  async function submitQuiz() {
     const studentId = document.getElementById('studentId').value;
     const studentName = document.getElementById('studentName').value;
   
@@ -83,7 +82,6 @@ function displayQuiz(data) {
           response: selectedOption.id
         });
       } else if (trueFalseAnswer){
-        console.log(222222222222222)
         quizResponses.push({
             question: question.questionText,
             answer: question.correctAnswer,
@@ -91,7 +89,6 @@ function displayQuiz(data) {
           });
       }
       else if (fillBlankAnswer){
-        console.log(11111111111111111111111)
         console.log(fillBlankAnswer.value);
         quizResponses.push({
             question: question.questionText,
@@ -115,8 +112,28 @@ function displayQuiz(data) {
   
     console.log('Quiz Data:', quizData);
     // Send the quiz data to the backend (you need to implement this part)
+
+    try {
+      const response = await fetch('/api/responses/response', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(quizData)
+      });
+
+      const data = await response.json();
+      if (data.success) {
+          alert('Quiz submitted successfully!');
+      } else {
+          alert('Error submitting the quiz. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting quiz:', error);
+      alert('An error occurred while submitting the quiz.');
+    }
+
   }
-  
 
 
   getQuiz();
