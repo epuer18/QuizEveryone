@@ -1,128 +1,115 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: rgb(252, 208, 214);
-  }
-
-  
-  h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-    text-align: center;
-    color:rgb(187, 0, 255);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    font-size: 24px;
-  }
-
-  .quizForm {
-    font-size: 32px;
-  }
-  .answerOptions {
-    display: none;
-  }
-  
-  .trueOrFalse {
-    display: block;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: rgb(252, 208, 214);
 }
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(187, 0, 255);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.quizForm {
+  font-size: 32px;
+}
+.answerOptions {
+  display: none;
+}
+
+.trueOrFalse {
+  display: block;
+}
+
 .fillBlank {
-    display: none;
+  display: none;
 }
-  
+
 #questionsContainer {
-    border: 5px solid rgb(3, 251, 255);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  
-  .questionHead {
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 5px;
-    text-align: center;
-    color: rgb(187, 0, 255);
-  }
-  
-  .questionBody {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-  
-  .answerBody {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+  border: 5px solid rgb(3, 251, 255);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
-  .options{
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+.questionHead {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: rgb(187, 0, 255);
+}
 
+.questionBody {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
 
-  
-  /* .questionLine {
-    margin-top: 10px;
-    color-scheme: pink;
-    size: 10pt;
-  } */
+.answerBody {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .questionLine {
-    margin-top: 15px;
-    border: 0;
-    height: 3px;
-    background:rgb(243, 251, 98);
-  }
+.options {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  button {
-    padding: 30px 60px; /* Increased padding for larger buttons */
-    font-size: 36px; /* Increased font size */
-    margin-right: 20px;
-    border: 8px solid rgb(243, 251, 98); /* Pink border */
-    background-color: rgb(249, 7, 164); /* White background */
-    color: rgb(3, 251, 255); /* Black text color */
-  }
-  
-  button:hover {
-    background-color: rgb(246, 168, 180); /* Pink background on hover */
-    color: rgb(3, 251, 255); /* White text color on hover */
-  }
-  
-  /* Additional styles for centering the buttons */
-  #buttonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+.questionLine {
+  margin-top: 15px;
+  border: 0;
+  height: 3px;
+  background: rgb(243, 251, 98);
+}
 
-  .homeicon{
-    width:80px;
-    height:80px;
-  }
+button {
+  padding: 30px 60px;
+  font-size: 36px;
+  margin-right: 20px;
+  border: 8px solid rgb(243, 251, 98);
+  background-color: rgb(249, 7, 164);
+  color: rgb(3, 251, 255);
+}
 
-  .home {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: left;
-    
-  }
+button:hover {
+  background-color: rgb(246, 168, 180);
+  color: rgb(3, 251, 255);
+}
 
-  .home a{
-    color:rgb(249, 7, 164);
-    font-weight: bold;
-  }
-  
-  /* Add more styles as needed */
-  
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homeicon {
+  width: 80px;
+  height: 80px;
+}
+
+.home {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.home a {
+  color: rgb(249, 7, 164);
+  font-weight: bold;
+}
