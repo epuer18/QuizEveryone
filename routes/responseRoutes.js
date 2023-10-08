@@ -34,15 +34,17 @@ router.get('/feedback/responseId', async (req, res) => {
 
         console.log(studentAnswers);
 
-        studentAnswers.forEach((question,response, answer) => {
-            console.log(response);
-            const isCorrect = response === answer;
+        studentAnswers.forEach((studentAnswer) => {
+            console.log(111111111111111111);
+            console.log(studentAnswer);
+            console.log(22222222222222222222);
+            const isCorrect = studentAnswer.response === studentAnswer.answer;
             if (isCorrect) correctCount++;
 
             detailedFeedback.push({
-                question: question,
-                studentAnswer: response,
-                correctAnswer: answer,
+                question: studentAnswer.question,
+                studentAnswer: studentAnswer.response,
+                correctAnswer: studentAnswer.answer,
                 isCorrect: isCorrect
             });
         });

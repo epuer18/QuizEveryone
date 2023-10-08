@@ -142,6 +142,7 @@ function displayQuiz(data) {
         
         if (data.success) {
             const feedbackContainer = document.getElementById('feedbackContainer');
+            const feedbackDiv = document.createElement('div');
             
             // Display each question, student's answer, and the correct answer
             let detailedFeedbackHtml = '';
@@ -156,11 +157,12 @@ function displayQuiz(data) {
             });
 
             // Display the percentage
-            feedbackContainer.innerHTML = `
+            feedbackDiv.innerHTML = `
                 ${detailedFeedbackHtml}
                 <h2>Overall Feedback</h2>
                 <p>Percentage Correct: ${data.percentageCorrect}%</p>
             `;
+            feedbackContainer.appendChild(feedbackDiv);
         } else {
             alert('Error fetching feedback.');
         }
