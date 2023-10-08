@@ -129,8 +129,6 @@ function clearInputFields() {
 }
 
 
-
-
 async function submitQuiz() {
     if (questions.length === 0) {
       alert('Please add at least one question to submit the quiz.');
