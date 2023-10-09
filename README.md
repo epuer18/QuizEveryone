@@ -1,16 +1,70 @@
 # QuizEveryone
 
-Author: Yushi Cui and Zexi Gong
+## Project Objective
 
-Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
+Quiz Everyone is a web application designed to enhance audience engagement through interactive quizzes. The platform allows users to create customized quizzes and distribute them to participants. After participating, users receive insightful feedback. The main goal is to provide a simple and user-friendly interface for creating and participating in quizzes, suitable for both educators and students.
 
-Project Objective: The objective of the "Quiz Everyone" project is to develop a web application that empowers educators and administrators to create, share, and manage quizzes effortlessly. The platform will enable users to generate custom quizzes with diverse question types, share them through unique URLs, and collect and analyze participant responses. Ultimately, our aim is to enhance audience engagement, streamline the quiz creation process, and provide insightful feedback to improve the learning experience for both educators and learners.
+## Design Document
+[View Design Document(PDF)](https:)
 
-Design Document: https://docs.google.com/document/d/1RtifuN9u5YRcRfKW30iL2ABufcFgLsoIUmQLVBdWgIE/edit?usp=sharing
+## Screenshot
 
-Screenshot:
-Mainpage:
-![image](https://github.com/Yushicui/QuizEveryone/assets/145535662/777d220c-945a-42f8-b30b-058bca90c697)
+There are three web pages, each with distinct features as described below:
 
-Instructions to Build:
-Follow these instructions to set up and build the project locally:
+Home Page:
+
+![Home page screenshot]()
+
+Create Quiz Page:
+![Create Quiz page screenshot]()
+
+Quiz Page:
+![Quiz Page screenshot]()
+
+Quiz Page with Feedback:
+![Quiz Page with Feedback screenshot]()
+
+
+## Tech Requirements
+
+- Node.js: v20.7.0 or above
+- MongoDB: v6.1.0 or above
+- Express.js: v4.18.2 or above
+
+
+## How to Install/Use
+
+**1. Clone the repository:** <br>
+
+`git clone https://github.com/Yushicui/QuizEveryone.git`
+
+**2. Navigate to the project directory:** <br>
+     `cd quiz-everyone`
+
+**3. Install dependencies:** <br>
+     `npm install`
+
+**4. Run the application:** <br>
+     `npm start`
+
+Then, open your browser and navigate to http://localhost:3000/ to start using Quiz Everyone.
+
+
+## Authors
+
+Yushi Cui<br>
+Zexi Gong<br>
+
+
+## Reference to the Class
+
+This project was created as a part of the Web Development class in Computer Science Master’s program at Northeastern University. [More about the class](https://johnguerra.co/classes/webDevelopment_fall_2023/)
+
+
+## Link to the Video Demonstration
+
+Watch a detailed walkthrough of the project in this [video demonstration](https://youtu.be/yourlinkhere).
+
+
+## Link to the Google slides
+View the presentation of the project in this [google slides](https:)
