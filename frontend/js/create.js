@@ -1,3 +1,4 @@
+const create =(function() {
 let questions = [];
 let questionCounter = 1;
 
@@ -173,3 +174,13 @@ async function submitQuiz() {
   const questionsContainer = document.getElementById("questionsContainer");
   questionsContainer.innerHTML = "";
 }
+
+return {
+  toggleOptions:() => toggleOptions(),
+  addQuestion:() => addQuestion(),
+  submitQuiz:() => submitQuiz(),
+};
+
+})();
+
+create();

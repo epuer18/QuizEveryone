@@ -1,3 +1,4 @@
+const quizPage =(function() {
 let questions = [];
 
 async function getQuiz() {
@@ -213,3 +214,12 @@ async function fetchFeedback(responseId) {
 }
 
 getQuiz();
+
+return {
+  copyLinkToClipboard:() => copyLinkToClipboard(),
+  submitQuiz:() => submitQuiz(),
+};
+
+})();
+
+quizPage();
