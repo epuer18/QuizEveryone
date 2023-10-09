@@ -35,11 +35,8 @@ function myMongoDB() {
 
   myDB.getQuizById = async (quizId) => {
     const db = await connect();
-    console.log("lalala");
-    console.log(quizId);
     const quizCol = db.collection(COllCECTION_QUIZ);
     const quiz = await quizCol.findOne({ _id: new ObjectId(quizId) });
-    console.log(quiz);
     return quiz;
   };
 
@@ -54,7 +51,6 @@ function myMongoDB() {
   myDB.getResponseById = async (responseId) => {
     const db = await connect();
     const responseCol = db.collection(COllCECTION_RESPONSE);
-    console.log(responseId);
     return await responseCol.findOne({ _id: new ObjectId(responseId) });
   };
 

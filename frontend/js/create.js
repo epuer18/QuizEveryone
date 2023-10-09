@@ -143,8 +143,8 @@ const create = (function () {
 
     const currQuiz = {
       quiz: questions,
-      title: "sample quiz",
-      description: "A simple quiz",
+      title: "Created Quiz",
+      description: "The created quiz",
     };
     try {
       const response = await fetch(url, {
