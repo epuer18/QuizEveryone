@@ -5,7 +5,7 @@
 Quiz Everyone is a web application designed to enhance audience engagement through interactive quizzes. The platform allows users to create customized quizzes and distribute them to participants. After participating, users receive insightful feedback. The main goal is to provide a simple and user-friendly interface for creating and participating in quizzes, suitable for both educators and students.
 
 ## Design Document
-[View Design Document(PDF)](https:)
+[View Design Document](https://docs.google.com/document/d/1RtifuN9u5YRcRfKW30iL2ABufcFgLsoIUmQLVBdWgIE/edit?usp=sharing)
 
 ## Screenshot
 
