@@ -67,4 +67,4 @@ Watch a detailed walkthrough of the project in this [video demonstration](https:
 
 
 ## Link to the Google slides
-View the presentation of the project in this [google slides]([https:](https://docs.google.com/presentation/d/1ewzxzt-qBYov1Nv2b-XvG7yT2b_BrO4WCik9MTXXqyk/edit#slide=id.g24c76796e95_0_26)https://docs.google.com/presentation/d/1ewzxzt-qBYov1Nv2b-XvG7yT2b_BrO4WCik9MTXXqyk/edit#slide=id.g24c76796e95_0_26)
+View the presentation of the project in this [google slides](https://docs.google.com/presentation/d/1ewzxzt-qBYov1Nv2b-XvG7yT2b_BrO4WCik9MTXXqyk/edit#slide=id.g24c76796e95_0_26)
