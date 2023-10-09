@@ -5,6 +5,7 @@
 Quiz Everyone is a web application designed to enhance audience engagement through interactive quizzes. The platform allows users to create customized quizzes and distribute them to participants. After participating, users receive insightful feedback. The main goal is to provide a simple and user-friendly interface for creating and participating in quizzes, suitable for both educators and students.
 
 ## Design Document
+
 [View Design Document](https://docs.google.com/document/d/1RtifuN9u5YRcRfKW30iL2ABufcFgLsoIUmQLVBdWgIE/edit?usp=sharing)
 
 ## Screenshot
@@ -24,13 +25,11 @@ Quiz Page:
 Quiz Page with Feedback:
 ![Quiz Page with Feedback screenshot]()
 
-
 ## Tech Requirements
 
 - Node.js: v20.7.0 or above
 - MongoDB: v6.1.0 or above
 - Express.js: v4.18.2 or above
-
 
 ## How to Install/Use
 
@@ -39,32 +38,29 @@ Quiz Page with Feedback:
 `git clone https://github.com/Yushicui/QuizEveryone.git`
 
 **2. Navigate to the project directory:** <br>
-     `cd quiz-everyone`
+`cd quiz-everyone`
 
 **3. Install dependencies:** <br>
-     `npm install`
+`npm install`
 
 **4. Run the application:** <br>
-     `npm start`
+`npm start`
 
 Then, open your browser and navigate to http://localhost:3000/ to start using Quiz Everyone.
-
 
 ## Authors
 
 Yushi Cui<br>
 Zexi Gong<br>
 
-
 ## Reference to the Class
 
 This project was created as a part of the Web Development class in Computer Science Master’s program at Northeastern University. [More about the class](https://johnguerra.co/classes/webDevelopment_fall_2023/)
-
 
 ## Link to the Video Demonstration
 
 Watch a detailed walkthrough of the project in this [video demonstration](https://youtu.be/yourlinkhere).
 
-
 ## Link to the Google slides
+
 View the presentation of the project in this [google slides](https://docs.google.com/presentation/d/1ewzxzt-qBYov1Nv2b-XvG7yT2b_BrO4WCik9MTXXqyk/edit#slide=id.g24c76796e95_0_26)

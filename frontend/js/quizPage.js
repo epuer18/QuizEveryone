@@ -1,35 +1,35 @@
-const quizPage =(function() {
-let questions = [];
+const quizPage = (function () {
+  let questions = [];
 
-async function getQuiz() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const quizId = urlParams.get("quizId");
-  fetch(`/api/quizzes/id?id=${quizId}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Quiz fetched successfully:", data);
-      displayQuiz(data);
-      questions = data.quiz;
-    })
-    .catch((error) => {
-      console.error("Error fetching quiz:", error);
-      alert("An error occurred while fetching the quiz.");
-    });
-}
+  async function getQuiz() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizId = urlParams.get("quizId");
+    fetch(`/api/quizzes/id?id=${quizId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Quiz fetched successfully:", data);
+        displayQuiz(data);
+        questions = data.quiz;
+      })
+      .catch((error) => {
+        console.error("Error fetching quiz:", error);
+        alert("An error occurred while fetching the quiz.");
+      });
+  }
 
-function displayQuiz(data) {
-  const quizContainer = document.getElementById("quizContainer");
+  function displayQuiz(data) {
+    const quizContainer = document.getElementById("quizContainer");
 
-  quizContainer.innerHTML = "";
+    quizContainer.innerHTML = "";
 
-  data.quiz.forEach((question, index) => {
-    const questionDiv = document.createElement("div");
-    questionDiv.innerHTML = `
+    data.quiz.forEach((question, index) => {
+      const questionDiv = document.createElement("div");
+      questionDiv.innerHTML = `
         <h3>Question ${index + 1}</h3>
         <p>${question.questionText}</p>
         ${
@@ -71,109 +71,109 @@ function displayQuiz(data) {
     }
         <hr class = "questionLine">
       `;
-    quizContainer.appendChild(questionDiv);
-  });
-}
-
-async function submitQuiz() {
-  const studentId = document.getElementById("studentId").value;
-  const studentName = document.getElementById("studentName").value;
-
-  if (!studentId || !studentName) {
-    alert("Please enter Student ID and Name.");
-    return;
+      quizContainer.appendChild(questionDiv);
+    });
   }
 
-  const quizResponses = [];
+  async function submitQuiz() {
+    const studentId = document.getElementById("studentId").value;
+    const studentName = document.getElementById("studentName").value;
 
-  questions.forEach((question, index) => {
-    let selectedOption = document.querySelector(
-      `input[name="question${index}"]:checked`,
-    );
-    let trueFalseAnswer = document.getElementById(`trueFalseAnswer${index}`);
-    let fillBlankAnswer = document.getElementById(`fillBlankAnswer${index}`);
-    console.log(selectedOption);
-    console.log(question);
-    if (selectedOption) {
-      quizResponses.push({
-        question: question.questionText,
-        answer: question.correctAnswer,
-        response: selectedOption.id,
-      });
-    } else if (trueFalseAnswer) {
-      quizResponses.push({
-        question: question.questionText,
-        answer: question.correctAnswer,
-        response: trueFalseAnswer.value,
-      });
-    } else if (fillBlankAnswer) {
-      console.log(fillBlankAnswer.value);
-      quizResponses.push({
-        question: question.questionText,
-        answer: question.correctAnswer,
-        response: fillBlankAnswer.value.toLowerCase(),
-      });
-    } else {
-      quizResponses.push({
-        question: question.questionText,
-        response: "Not answered",
-      });
+    if (!studentId || !studentName) {
+      alert("Please enter Student ID and Name.");
+      return;
     }
-  });
 
-  const quizData = {
-    studentId,
-    studentName,
-    quizResponses,
-  };
-  try {
-    const response = await fetch("/api/responses/response", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(quizData),
+    const quizResponses = [];
+
+    questions.forEach((question, index) => {
+      let selectedOption = document.querySelector(
+        `input[name="question${index}"]:checked`,
+      );
+      let trueFalseAnswer = document.getElementById(`trueFalseAnswer${index}`);
+      let fillBlankAnswer = document.getElementById(`fillBlankAnswer${index}`);
+      console.log(selectedOption);
+      console.log(question);
+      if (selectedOption) {
+        quizResponses.push({
+          question: question.questionText,
+          answer: question.correctAnswer,
+          response: selectedOption.id,
+        });
+      } else if (trueFalseAnswer) {
+        quizResponses.push({
+          question: question.questionText,
+          answer: question.correctAnswer,
+          response: trueFalseAnswer.value,
+        });
+      } else if (fillBlankAnswer) {
+        console.log(fillBlankAnswer.value);
+        quizResponses.push({
+          question: question.questionText,
+          answer: question.correctAnswer,
+          response: fillBlankAnswer.value.toLowerCase(),
+        });
+      } else {
+        quizResponses.push({
+          question: question.questionText,
+          response: "Not answered",
+        });
+      }
     });
 
-    const data = await response.json();
-    console.log(data);
-    if (data.success) {
-      alert("Quiz submitted successfully!");
-      console.log(data.responseId);
-      fetchFeedback(data.responseId);
-    } else {
-      alert("Error submitting the quiz. Please try again.");
+    const quizData = {
+      studentId,
+      studentName,
+      quizResponses,
+    };
+    try {
+      const response = await fetch("/api/responses/response", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(quizData),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("Quiz submitted successfully!");
+        console.log(data.responseId);
+        fetchFeedback(data.responseId);
+      } else {
+        alert("Error submitting the quiz. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting quiz:", error);
+      alert("An error occurred while submitting the quiz.");
     }
-  } catch (error) {
-    console.error("Error submitting quiz:", error);
-    alert("An error occurred while submitting the quiz.");
   }
-}
 
-function copyLinkToClipboard() {
-  const textArea = document.createElement("textarea");
-  textArea.value = window.location.href;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textArea);
-  alert("Quiz link copied to clipboard!");
-}
+  function copyLinkToClipboard() {
+    const textArea = document.createElement("textarea");
+    textArea.value = window.location.href;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    alert("Quiz link copied to clipboard!");
+  }
 
-async function fetchFeedback(responseId) {
-  try {
-    const response = await fetch(
-      `/api/responses/feedback/responseId?responseId=${responseId}`,
-    );
-    const data = await response.json();
+  async function fetchFeedback(responseId) {
+    try {
+      const response = await fetch(
+        `/api/responses/feedback/responseId?responseId=${responseId}`,
+      );
+      const data = await response.json();
 
-    if (data.success) {
-      const feedbackContainer = document.getElementById("feedbackContainer");
-      const feedbackDiv = document.createElement("div");
+      if (data.success) {
+        const feedbackContainer = document.getElementById("feedbackContainer");
+        const feedbackDiv = document.createElement("div");
 
-      let detailedFeedbackHtml = "";
-      data.feedback.forEach((item) => {
-        detailedFeedbackHtml += `
+        let detailedFeedbackHtml = "";
+        data.feedback.forEach((item) => {
+          detailedFeedbackHtml += `
                 <div class="question-feedback ${
                   item.isCorrect
                     ? "correct-answer-container"
@@ -190,11 +190,11 @@ async function fetchFeedback(responseId) {
                 }
             </div>
             `;
-      });
-      const submitButton = document.querySelector('button[type="submit"]');
-      submitButton.style.display = "none";
+        });
+        const submitButton = document.querySelector('button[type="submit"]');
+        submitButton.style.display = "none";
 
-      feedbackDiv.innerHTML = `
+        feedbackDiv.innerHTML = `
               ${detailedFeedbackHtml}
               <div class="feedback-summary">
                   <h2>Overall Feedback</h2>
@@ -202,24 +202,23 @@ async function fetchFeedback(responseId) {
               </div>
             `;
 
-      const feedbackHead = feedbackContainer.querySelector(".feedbackHead");
-      feedbackContainer.insertBefore(feedbackDiv, feedbackHead.nextSibling);
-    } else {
-      alert("Error fetching feedback.");
+        const feedbackHead = feedbackContainer.querySelector(".feedbackHead");
+        feedbackContainer.insertBefore(feedbackDiv, feedbackHead.nextSibling);
+      } else {
+        alert("Error fetching feedback.");
+      }
+    } catch (error) {
+      console.error("Error fetching feedback:", error);
+      alert("An error occurred while fetching feedback.");
     }
-  } catch (error) {
-    console.error("Error fetching feedback:", error);
-    alert("An error occurred while fetching feedback.");
   }
-}
 
-getQuiz();
+  getQuiz();
 
-return {
-  copyLinkToClipboard:() => copyLinkToClipboard(),
-  submitQuiz:() => submitQuiz(),
-};
-
+  return {
+    copyLinkToClipboard: () => copyLinkToClipboard(),
+    submitQuiz: () => submitQuiz(),
+  };
 })();
 
 quizPage();
