@@ -16,19 +16,34 @@ There are three web pages, each with distinct features as described below:
 
 Home Page:
 
-![Home page screenshot]()
+![Home page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/homepage.jpg)
 
 Create Quiz Page:
-![Create Quiz page screenshot]()
+![Create Quiz page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/createquiz1.jpg)(https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/createquiz2.jpg)
 
 Quiz Page:
-![Quiz Page screenshot]()
+![Quiz Page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizpage1.jpg)(https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizpage2.jpg)
 
-Quiz Page with Feedback:
-![Quiz Page with Feedback screenshot]()
+Feedback in Quiz Page with:
+![Feedback in Quiz Page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizresult.jpg)
+
+## Tech Stack
+**Front End**
+- HTML5
+- CSS3
+- ES6+
+- Bootstrap5
+- Vanilla JavaScript 
+
+**Backend**
+- Node.js
+- Express.js
+- JavaScript
+
+**Database**
+- MongoDB
 
 ## Tech Requirements
-
 - Node.js: v20.7.0 or above
 - MongoDB: v6.1.0 or above
 - Express.js: v4.18.2 or above
