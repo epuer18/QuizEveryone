@@ -10,7 +10,11 @@ function myMongoDB() {
   const COllCECTION_QUIZ = "quiz";
   const COllCECTION_RESPONSE = "response";
 
-  const client = new MongoClient(MONGODB_URI);
+  const client = new MongoClient(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+});
 
   async function connect() {
     try {
