@@ -11,9 +11,9 @@ function myMongoDB() {
   const COllCECTION_RESPONSE = "response";
 
   const client = new MongoClient(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    ssl: true,
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+    tlsAllowInvalidHostnames: false,
 });
 
   async function connect() {
