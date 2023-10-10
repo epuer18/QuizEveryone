@@ -12,8 +12,7 @@ function myMongoDB() {
 
   const client = new MongoClient(MONGODB_URI, {
     tls: true,
-    tlsAllowInvalidCertificates: false,
-    tlsAllowInvalidHostnames: false,
+    tlsAllowInvalidCertificates: true,
 });
 
   async function connect() {
