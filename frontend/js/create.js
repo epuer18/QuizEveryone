@@ -181,5 +181,3 @@ const create = (function () {
     submitQuiz: () => submitQuiz(),
   };
 })();
-
-create();

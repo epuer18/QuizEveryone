@@ -198,7 +198,9 @@ const quizPage = (function () {
               ${detailedFeedbackHtml}
               <div class="feedback-summary">
                   <h2>Overall Feedback</h2>
-                  <p class="percentage-result"><strong>Percentage Correct: ${parseFloat(data.percentageCorrect).toFixed(2)}</strong>%</p>
+                  <p class="percentage-result"><strong>Percentage Correct: ${parseFloat(
+                    data.percentageCorrect,
+                  ).toFixed(2)}</strong>%</p>
               </div>
             `;
 
@@ -220,5 +222,3 @@ const quizPage = (function () {
     submitQuiz: () => submitQuiz(),
   };
 })();
-
-quizPage();

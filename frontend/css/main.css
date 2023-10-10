@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-button {
+.button {
   font-size: 48px;
   width: 500px;
   height: 200px;
@@ -39,9 +39,14 @@ button {
   color: rgb(3, 251, 255);
   border: none;
   cursor: pointer;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 0px;
+  text-decoration: none;
+  display: inline-block;
 }
 
-button:hover {
+.button:hover {
   background-color: rgb(246, 168, 180);
 }
 
