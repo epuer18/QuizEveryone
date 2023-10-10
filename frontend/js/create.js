@@ -162,7 +162,7 @@ const create = (function () {
       const data = await response.json();
       console.log("Quiz created with ID:", data.quizId);
 
-      window.location.href = `http://localhost:3000/quizPage.html?quizId=${data.quizId}`;
+      window.location.href = `/quizPage.html?quizId=${data.quizId}`;
     } catch (error) {
       console.error("Error creating quiz:", error);
     }
