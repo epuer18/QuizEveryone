@@ -12,7 +12,7 @@ Link to Quiz Everyone Web Application: (https://quizeveryone.onrender.com)
 
 ## Screenshot
 
-There are three web pages, each with distinct features as described below:
+There are three web pages, each with distinct features as shown below:
 
 Home Page:
 
@@ -26,8 +26,8 @@ Quiz Page:
 ![Quiz Page screenshot1](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizpage1.jpg)
 ![Quiz Page screenshot2](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizpage2.jpg)
 
-Feedback in Quiz Page with:
-![Feedback in Quiz Page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizresult.jpg)
+Quiz Page with Feedback:
+![Quiz Page with Feedback screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizresult.jpg)
 
 ## Tech Stack
 **Front End**
