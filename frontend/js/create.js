@@ -1,6 +1,12 @@
 const create = (function () {
   let questions = [];
   let questionCounter = 1;
+  const urlParams = new URLSearchParams(window.location.search);
+  const quizId = urlParams.get("quizId");
+  
+  if (quizId) {
+    getQuiz(quizId);
+  }
 
   function toggleOptions() {
     const questionType = document.getElementById("questionType").value;
@@ -133,6 +139,26 @@ const create = (function () {
     correctOption.selectedIndex = 0;
   }
 
+  async function getQuiz(quizId) {
+    console.log(quizId);
+    fetch(`/api/quizzes/id?id=${quizId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Quiz fetched successfully:", data);
+        questions = data.quiz;
+        questions.forEach(displayQuestion);
+      })
+      .catch((error) => {
+        console.error("Error fetching quiz:", error);
+        alert("An error occurred while fetching the quiz.");
+      });
+  }
+
   async function submitQuiz() {
     if (questions.length === 0) {
       alert("Please add at least one question to submit the quiz.");
@@ -162,7 +188,7 @@ const create = (function () {
       const data = await response.json();
       console.log("Quiz created with ID:", data.quizId);
 
-      window.location.href = `/quizPage.html?quizId=${data.quizId}`;
+      window.location.href = `/create.html?quizId=${data.quizId}`;
     } catch (error) {
       console.error("Error creating quiz:", error);
     }
@@ -175,9 +201,37 @@ const create = (function () {
     questionsContainer.innerHTML = "";
   }
 
+  async function deleteQuiz() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizId = urlParams.get("quizId");
+    const endpoint = `/api/quizzes/id?id=${quizId}`;
+    fetch(endpoint, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          console.log('Quiz deleted successfully');
+          window.location.href = `/create.html`;
+        } else {
+          console.error('Quiz deletion failed:', data.message);
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting quiz:', error);
+      });
+  }
+  
+
   return {
     toggleOptions: () => toggleOptions(),
     addQuestion: () => addQuestion(),
     submitQuiz: () => submitQuiz(),
+    deleteQuiz: () => deleteQuiz()
   };
 })();

@@ -37,6 +37,23 @@ function myMongoDB() {
     return quiz;
   };
 
+  myDB.updateQuiz = async (quizId, updatedData) => {
+    const db = await connect();
+    const quizCol = db.collection(COllCECTION_QUIZ);
+    const result = await quizCol.updateOne({ _id: new ObjectId(quizId) }, { $set: updatedData });
+    console.log('Updated quiz:', result);
+    return result;
+}
+
+
+myDB.deleteQuiz = async (quizId) => {
+    const db = await connect();
+    const quizCol = db.collection(COllCECTION_QUIZ);
+    const result = await quizCol.deleteOne({ _id: new ObjectId(quizId) });
+    console.log('Deleted quiz:', result);
+    return result;
+}
+
   myDB.insertResponse = async (responseData) => {
     const db = await connect();
     const responseCol = db.collection(COllCECTION_RESPONSE);
