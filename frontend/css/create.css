@@ -79,11 +79,22 @@ select {
 }
 
 button {
-  padding: 30px 60px;
+  padding: 20px 40px;
   font-size: 36px;
-  margin-right: 20px;
+  margin-right: 150px;
+  margin-left: 150px;
   border: 8px solid rgb(243, 251, 98);
   background-color: rgb(249, 7, 164);
+  color: rgb(3, 251, 255);
+}
+
+.preview {
+  padding: 20px 40px;
+  font-size: 36px;
+  margin-right: 150px;
+  margin-left: 150px;
+  border: 8px solid rgb(1, 225, 135);
+  background-color: rgb(187, 0, 255);
   color: rgb(3, 251, 255);
 }
 

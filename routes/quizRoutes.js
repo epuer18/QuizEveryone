@@ -29,10 +29,11 @@ router.get("/id", async (req, res) => {
   }
 });
 
-// Update a quiz
+// Update a quiz, done
 router.put('/id', async (req, res) => {
   try {
-      const updatedCount = await myDB.updateQuiz(req.query.id, req.body);
+      const updatedResult = await myDB.updateQuiz(req.query.id, req.body);
+      const updatedCount = updatedResult.modifiedCount;
       if (updatedCount > 0) {
           res.json({ success: true, message: 'Quiz updated' });
       } else {
@@ -47,7 +48,6 @@ router.put('/id', async (req, res) => {
 // Delete a quiz, done
 router.delete('/id', async (req, res) => {
   try {
-    console.log(req.query);
       const result = await myDB.deleteQuiz(req.query.id);
       const deletedCount = result.deletedCount;
       if (deletedCount > 0) {

@@ -36,7 +36,7 @@
 
         <div class="mb-3">
           <label for="questionType">Question Type:</label>
-          <select id="questionType" onchange="create.toggleOptions()">
+          <select id="questionType">
             <option value="trueFalse">True/False</option>
             <option value="multipleChoice">Multiple Choice</option>
             <option value="blankFilling">Blank Filling</option>
@@ -76,13 +76,13 @@
           <input type="text" id="fillBlankAnswer" required />
         </div>
         <div id="buttonContainer">
-          <button type="button" onclick="create.addQuestion()">
+          <button id="addQuestion">
             Add Question
           </button>
-          <button type="submit" onclick="create.submitQuiz()">
+          <button id="submit">
             Create Quiz
           </button>
-          <button type="jump" onclick="create.jump()">
+          <button id="jump">
             Jump to Quiz Page
           </button>
         </div>
@@ -91,7 +91,10 @@
       <div id="questionsContainer" class="mt-4">
         <h2 class="questionHead">Quiz Preview</h2>
         <div id="buttonContainer">
-          <button type="delete" onclick="create.deleteQuiz()">
+          <button id="update" class="preview">
+            Update Quiz
+          </button>
+          <button id="delete" class="preview">
             Delete Quiz
           </button>
       </div>

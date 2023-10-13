@@ -191,7 +191,7 @@ const quizPage = (function () {
             </div>
             `;
         });
-        const submitButton = document.querySelector('button[type="submit"]');
+        const submitButton = document.getElementById("submitQuiz");
         submitButton.style.display = "none";
 
         feedbackDiv.innerHTML = `
@@ -216,9 +216,6 @@ const quizPage = (function () {
   }
 
   getQuiz();
-
-  return {
-    copyLinkToClipboard: () => copyLinkToClipboard(),
-    submitQuiz: () => submitQuiz(),
-  };
+  document.getElementById("copyLink").addEventListener("click", copyLinkToClipboard);
+  document.getElementById("submitQuiz").addEventListener("click", submitQuiz);
 })();

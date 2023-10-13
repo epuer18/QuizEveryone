@@ -6,6 +6,12 @@ const create = (function () {
   
   if (quizId) {
     getQuiz(quizId);
+    document.getElementById("submit").style.display = "none";
+  }
+  else{
+    document.getElementById("jump").style.display = "none";
+    document.getElementById("delete").style.display = "none";
+    document.getElementById("update").style.display = "none";
   }
 
   function toggleOptions() {
@@ -140,7 +146,6 @@ const create = (function () {
   }
 
   async function getQuiz(quizId) {
-    console.log(quizId);
     fetch(`/api/quizzes/id?id=${quizId}`)
       .then((response) => {
         if (!response.ok) {
@@ -152,6 +157,7 @@ const create = (function () {
         console.log("Quiz fetched successfully:", data);
         questions = data.quiz;
         questions.forEach(displayQuestion);
+        questionCounter += questions.length;
       })
       .catch((error) => {
         console.error("Error fetching quiz:", error);
@@ -187,23 +193,46 @@ const create = (function () {
 
       const data = await response.json();
       console.log("Quiz created with ID:", data.quizId);
-
+      alert("Quiz created successfully. You can update and delete quiz as needed, or jump to quiz page and share quiz with students.");
       window.location.href = `/create.html?quizId=${data.quizId}`;
     } catch (error) {
       console.error("Error creating quiz:", error);
     }
     console.log("Submitting quiz to the server:", questions);
+  }
 
-    questions = [];
-    questionCounter = 1;
+  async function updateQuiz() {
+    const url = `/api/quizzes/id?id=${quizId}`;
 
-    const questionsContainer = document.getElementById("questionsContainer");
-    questionsContainer.innerHTML = "";
+    const currQuiz = {
+      quiz: questions,
+      title: "Updated Quiz",
+      description: "The updated quiz",
+    };
+    console.log(currQuiz);
+    try {
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(currQuiz),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      console.log("Quiz update with ID:", quizId);
+      alert("Quiz updated successfully.");
+    } catch (error) {
+      console.error("Error creating quiz:", error);
+    }
+    console.log("Submitting quiz to the server:", questions);
   }
 
   async function deleteQuiz() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const quizId = urlParams.get("quizId");
     const endpoint = `/api/quizzes/id?id=${quizId}`;
     fetch(endpoint, {
       method: 'DELETE',
@@ -217,6 +246,7 @@ const create = (function () {
       .then((data) => {
         if (data.success) {
           console.log('Quiz deleted successfully');
+          alert("Quiz deleted successfully.");
           window.location.href = `/create.html`;
         } else {
           console.error('Quiz deletion failed:', data.message);
@@ -226,12 +256,22 @@ const create = (function () {
         console.error('Error deleting quiz:', error);
       });
   }
-  
 
-  return {
-    toggleOptions: () => toggleOptions(),
-    addQuestion: () => addQuestion(),
-    submitQuiz: () => submitQuiz(),
-    deleteQuiz: () => deleteQuiz()
-  };
+  function jumpToQuizPage() {
+    if (quizId) {
+      window.location.href = `/quizPage.html?quizId=${quizId}`;
+    }
+    else{
+      alert("Please creste quiz first.");
+    }
+   
+  }
+
+  document.getElementById("questionType").addEventListener("change", toggleOptions);
+  document.getElementById("addQuestion").addEventListener("click", addQuestion);
+  document.getElementById("submit").addEventListener("click", submitQuiz);
+  document.getElementById("jump").addEventListener("click", jumpToQuizPage);
+  document.getElementById("update").addEventListener("click", updateQuiz);
+  document.getElementById("delete").addEventListener("click", deleteQuiz);
+
 })();
