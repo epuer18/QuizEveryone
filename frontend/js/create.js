@@ -124,6 +124,12 @@ const create = (function () {
     <hr class = "questionLine">
   `;
     questionsContainer.appendChild(questionDiv);
+
+    const updateButton = document.getElementById("update");
+    const deleteButton = document.getElementById("delete");
+
+    questionsContainer.appendChild(updateButton);
+    questionsContainer.appendChild(deleteButton);
   }
 
   function clearInputFields() {
@@ -193,7 +199,7 @@ const create = (function () {
       const data = await response.json();
       console.log("Quiz created with ID:", data.quizId);
       alert(
-        "Quiz created successfully. You can update and delete quiz as needed, or jump to quiz page and share quiz with students.",
+        "Quiz created successfully! You can add more questions or jump to the quiz page.",
       );
       window.location.href = `/create.html?quizId=${data.quizId}`;
     } catch (error) {

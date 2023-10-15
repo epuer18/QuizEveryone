@@ -92,8 +92,6 @@ const quizPage = (function () {
       );
       let trueFalseAnswer = document.getElementById(`trueFalseAnswer${index}`);
       let fillBlankAnswer = document.getElementById(`fillBlankAnswer${index}`);
-      // console.log(selectedOption);
-      // console.log(question);
       if (selectedOption) {
         quizResponses.push({
           question: question.questionText,
