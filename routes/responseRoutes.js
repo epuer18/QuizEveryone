@@ -49,20 +49,4 @@ router.get("/feedback/responseId", async (req, res) => {
   }
 });
 
-// // Delete a respond
-// router.delete('/response', async (req, res) => {
-//   try {
-//       const result = await myDB.deleteResponseById(req.query.responseId);
-//       const deletedCount = result.deletedCount;
-//       if (deletedCount > 0) {
-//           res.json({ success: true, message: 'Response deleted' });
-//       } else {
-//           res.status(404).json({ success: false, message: 'Response not found' });
-//       }
-//   } catch (error) {
-//       console.error('Error deleting response:', error);
-//       res.status(500).json({ success: false, message: 'Internal Server Error' });
-//   }
-// });
-
 export default router;

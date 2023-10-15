@@ -92,8 +92,8 @@ const quizPage = (function () {
       );
       let trueFalseAnswer = document.getElementById(`trueFalseAnswer${index}`);
       let fillBlankAnswer = document.getElementById(`fillBlankAnswer${index}`);
-      console.log(selectedOption);
-      console.log(question);
+      // console.log(selectedOption);
+      // console.log(question);
       if (selectedOption) {
         quizResponses.push({
           question: question.questionText,
@@ -216,6 +216,8 @@ const quizPage = (function () {
   }
 
   getQuiz();
-  document.getElementById("copyLink").addEventListener("click", copyLinkToClipboard);
+  document
+    .getElementById("copyLink")
+    .addEventListener("click", copyLinkToClipboard);
   document.getElementById("submitQuiz").addEventListener("click", submitQuiz);
 })();

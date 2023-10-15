@@ -30,22 +30,27 @@ Quiz Page with Feedback:
 ![Quiz Page with Feedback screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/quizresult.jpg)
 
 ## Tech Stack
+
 **Front End**
+
 - HTML5
 - CSS3
 - ES6+
 - Bootstrap5
-- Vanilla JavaScript 
+- Vanilla JavaScript
 
 **Backend**
+
 - Node.js
 - Express.js
 - JavaScript
 
 **Database**
+
 - MongoDB
 
 ## Tech Requirements
+
 - Node.js: v20.7.0 or above
 - MongoDB: v6.1.0 or above
 - Express.js: v4.18.2 or above
