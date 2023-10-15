@@ -71,7 +71,8 @@ const create = (function () {
           number: questionCounter,
         };
       } else {
-        const correctAnswer = document.getElementById("fillBlankAnswer").value;
+        const correctAnswerRaw = document.getElementById("fillBlankAnswer").value;
+        const correctAnswer = correctAnswerRaw.toLowerCase();
 
         question = {
           questionText,
