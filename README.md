@@ -77,7 +77,7 @@ Quiz Page with Feedback:
 `npm install`
 
 **4. Connect Database:** <br>
-`Include a .env file in the project's root directory to set up the MONGODB_URI with your MongoDB connection string.`
+Include a `.env` file in the project's root directory to set up the `MONGODB_URI` with your MongoDB connection string.
 
 **5. Run the application:** <br>
 `npm start`
