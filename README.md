@@ -67,7 +67,10 @@ Quiz Page with Feedback:
 **3. Install dependencies:** <br>
 `npm install`
 
-**4. Run the application:** <br>
+**4. Connect Database:** <br>
+`Include a .env file in the project's root directory to set up the MONGODB_URI with your MongoDB connection string.`
+
+**5. Run the application:** <br>
 `npm start`
 
 Then, open your browser and navigate to http://localhost:3000/ to start using Quiz Everyone.
