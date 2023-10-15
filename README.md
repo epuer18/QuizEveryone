@@ -28,7 +28,7 @@ Home Page:
 ![Home page screenshot](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/homepage.jpg)
 
 Create Quiz Page:
-![Create Quiz page screenshot1](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/createquiz1.jpg)
+![Create Quiz page screenshot1](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/createquiz1-.jpg)
 ![Create Quiz page screenshot2](https://github.com/Yushicui/QuizEveryone/blob/main/screenshot/createquiz2-.jpg)
 
 Quiz Page:
