@@ -11,10 +11,11 @@ Link to Quiz Everyone Web Application: (https://quizeveryone.onrender.com)
 [View Design Document](https://docs.google.com/document/d/1RtifuN9u5YRcRfKW30iL2ABufcFgLsoIUmQLVBdWgIE/edit?usp=sharing)
 
 ## Features
+
 - Create Quiz: Users can create custom quizzes for various question types
 - Quiz Preview: Users can preview the quiz before creation
 - Update Quiz: Users can add more questions and save the updated quiz
-- Delete Quiz: Users can delete the quiz 
+- Delete Quiz: Users can delete the quiz
 - Shareable Links: Quizzes can be shared through unique URLs
 - Participate Quiz: Participants can join and respond to the quiz
 - Quiz Feedback: Participants can get feedback result after submitting the quiz
