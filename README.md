@@ -12,13 +12,13 @@ Link to Quiz Everyone Web Application: (https://quizeveryone.onrender.com)
 
 ## Features
 
-- Create Quiz: Users can create custom quizzes for various question types
-- Quiz Preview: Users can preview the quiz before creation
-- Update Quiz: Users can add more questions and save the updated quiz
-- Delete Quiz: Users can delete the quiz
-- Shareable Links: Quizzes can be shared through unique URLs
-- Participate Quiz: Participants can join and respond to the quiz
-- Quiz Feedback: Participants can get feedback result after submitting the quiz
+- **Create Quiz:** Users can create custom quizzes for various question types
+- **Quiz Preview:** Users can preview the quiz before creation
+- **Update Quiz:** Users can add more questions and save the updated quiz
+- **Delete Quiz:** Users can delete the quiz
+- **Shareable Links:** Quizzes can be shared through unique URLs
+- **Participate Quiz:** Participants can join and respond to the quiz
+- **Quiz Feedback:** Participants can get feedback result after submitting the quiz
 
 ## Screenshot
 
@@ -87,10 +87,10 @@ Then, open your browser and navigate to http://localhost:3000/ to start using Qu
 
 ## Authors
 
-Yushi Cui<br>
+**Yushi Cui**<br>
 Link to Homepage:[Yushi's Homepage](https://yushicui.github.io/MyHomePage/)<br>
 
-Zexi Gong<br>
+**Zexi Gong**<br>
 Link to Homepage:[Zexi's Homepage](https://zexigong-ne.github.io/)<br>
 
 ## Reference to the Class
