@@ -103,4 +103,4 @@ View the presentation of the project in this [google slides](https://docs.google
 
 ## Link to the Video Demonstration
 
-Watch a detailed walkthrough of the project in this [video demonstration](https://youtu.be/uwJ5lgnjGfk)
+Watch a detailed walkthrough of the project in this [video demonstration](https://youtu.be/hg0aSq3vYKs)
