@@ -104,3 +104,6 @@ View the presentation of the project in this [google slides](https://docs.google
 ## Link to the Video Demonstration
 
 Watch a detailed walkthrough of the project in this [video demonstration](https://youtu.be/hg0aSq3vYKs)
+
+## License
+License: This project is licensed under the MIT License - see the [LICENSE](https://github.com/Yushicui/QuizEveryone/blob/main/LICENSE) for details.
